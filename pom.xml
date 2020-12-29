@@ -6,6 +6,32 @@
 
     <groupId>org.example</groupId>
     <artifactId>zookeeper-father</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>api</module>
+        <module>order-consumer</module>
+        <module>product-service</module>
+    </modules>
 
+    <properties>
+        <zkclient.version>0.10</zkclient.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.101tec</groupId>
+                <artifactId>zkclient</artifactId>
+                <version>${zkclient.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.101tec</groupId>
+            <artifactId>zkclient</artifactId>
+        </dependency>
+    </dependencies>
 </project>
